@@ -47,7 +47,7 @@ class CarousellItem:
     def msg_str(self) -> str:
         return f"<b>{self.name[:36] + '...' if len(self.name) > 36 else self.name}\n</b>" + \
                f"{self.price} ({self.condition})\n" + \
-               f"https://carousell.hk{self.url}"
+               f"https://carousell.com.hk{self.url}"
 
 
 def scrape(item_name: str) -> List[CarousellItem]:
@@ -67,7 +67,7 @@ def scrape(item_name: str) -> List[CarousellItem]:
 
     # browse to carousell
     driver.get(
-        f"https://www.carousell.hk/search/\"placeholder\"?addRecent=false&canChangeKeyword=false&includeSuggestions=false&sort_by=3")
+        f"https://www.carousell.com.hk/search/\"placeholder\"?addRecent=false&canChangeKeyword=false&includeSuggestions=false&sort_by=3")
 
     # find search box
     search_box = driver.find_element(
